@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Data Penjualan</h1>
+    <h3>Read All Data</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID Penjualan</th>
+                <th>ID Pasar</th>
+                <th>Nama Pasar</th>
+                <th>Tanggal Penjualan</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in penjualanobj %}
+            <tr>
+                <td>{{item.id_penjualan}}</td>
+                <td>{{item.id_pasar_id}}</td>
+                <td>{{item.id_pasar.nama_pasar}}</td>
+                <td>{{item.tanggal_penjualan}}</td>
+                <td>
+                    <a href="{% url 'updatepenjualan' item.id_penjualan %}">
+                        <button>Update</button>
+                    </a>
+                    <a href="{% url 'deletepenjualan' item.id_penjualan %}">
+                        <button>Delete</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'createpenjualan' %}"> <button>Create Penjualan</button></a>
+</body>
+</html>

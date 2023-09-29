@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Create Data Pembelian</h1>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <table>
+            <tbody>
+                <tr>
+                    <td>Jumlah Pembelian</td>
+                    <td>
+                        <input type="number" name="jumlah_pembelian">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tanggal pembelian</td>
+                    <td>
+                        <input type="date" name="tanggal_pembelian">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="submit">SUBMIT</button>
+    </form>
+</body>
+</html>
